@@ -1,0 +1,6 @@
+@SampleDotNetRepositoryPatternDapper.API_HostAddress = http://localhost:5166
+
+GET {{SampleDotNetRepositoryPatternDapper.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
