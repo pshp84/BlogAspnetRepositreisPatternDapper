@@ -30,5 +30,10 @@ namespace SampleDotNetRepositoryPatternDapper.App
         }
 
         public Task<IEnumerable<User>> GetAllUsers() => _userRepository.GetAllAsync();
+
+        public Task<User> GetLoginUser(UserLogin user)
+        {
+            return _userRepository.LoginUser(user);
+        }
     }
 }

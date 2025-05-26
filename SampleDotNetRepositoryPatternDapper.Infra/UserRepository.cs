@@ -59,5 +59,12 @@ namespace SampleDotNetRepositoryPatternDapper.Infra
             await connection.ExecuteAsync(sql, new { Id = id });
         }
 
+        public async Task<User> LoginUser (UserLogin login)
+        {
+            var sql = "SELECT * FROM Users WHERE UserName = @userName and Password = @password";
+            using var connection = _context.CreateConnection();
+            return await connection.QuerySingleOrDefaultAsync<User>(sql, new { userName = login.UserName , password = login.Password  });
+        }
+
     }
 }
